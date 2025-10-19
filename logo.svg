@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="420" viewBox="0 0 390 420" role="img" aria-label="Animated Portfolio Optimization Visual">
+    <defs>
+        <linearGradient id="bgGrad" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#0f172a"/>
+            <stop offset="1" stop-color="#071025"/>
+        </linearGradient>
+
+        <linearGradient id="accentGrad" x1="0" x2="1">
+            <stop offset="0" stop-color="#4fd1c5" />
+            <stop offset="1" stop-color="#4f46e5" />
+        </linearGradient>
+
+        <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+            <stop offset="0" stop-color="#00ffda" stop-opacity="0.12"/>
+            <stop offset="1" stop-color="#00a3ff" stop-opacity="0"/>
+        </radialGradient>
+
+        <clipPath id="roundedTop">
+            <rect x="0" y="0" width="390" height="420" rx="32" ry="32"/>
+        </clipPath>
+    </defs>
+
+    <!-- Background -->
+    <rect width="390" height="420" fill="url(#bgGrad)"/>
+
+    <g clip-path="url(#roundedTop)">
+        <!-- soft glow -->
+        <circle cx="320" cy="70" r="90" fill="url(#glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0.4;0.15" dur="4s" begin="0s" fill="freeze"/>
+        </circle>
+
+        <!-- faint grid appears gradually -->
+        <g opacity="0" stroke="#ffffff" stroke-width="1" stroke-linecap="round">
+            <path d="M20 100h350M20 160h350M20 220h350M20 280h350" />
+            <path d="M70 60v340M140 60v340M210 60v340M280 60v340" />
+            <animate attributeName="opacity" values="0;0.08" dur="1.5s" begin="0.3s" fill="freeze"/>
+        </g>
+
+        <!-- portfolio badge (exploration pulse) -->
+        <g transform="translate(36,64)">
+            <circle cx="40" cy="40" r="48" fill="#071430" stroke="url(#accentGrad)" stroke-width="2" opacity="0.9"/>
+            <g transform="translate(40,40)">
+                <rect x="-20" y="8" width="12" height="24" rx="2" fill="#13293b"/>
+                <rect x="-4" y="-4" width="12" height="36" rx="2" fill="#173246"/>
+                <rect x="12" y="-14" width="12" height="46" rx="2" fill="#1e4150"/>
+                <path d="M-26 18 Q -10 4 2 10 Q 20 20 28 6"
+                      fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-dasharray="100" stroke-dashoffset="100">
+                    <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.8s" begin="0.5s" fill="freeze"/>
+                </path>
+            </g>
+            <circle cx="40" cy="40" r="60" fill="url(#accentGrad)" opacity="0">
+                <animate attributeName="opacity" values="0;0.15;0" dur="3s" begin="1.2s" fill="freeze"/>
+            </circle>
+        </g>
+
+        <!-- Graph (learning and optimization) -->
+        <g transform="translate(36,150)">
+            <rect x="0" y="0" width="318" height="188" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.03)" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1s" fill="freeze"/>
+            </rect>
+
+            <!-- area fill -->
+            <path d="M16 150 C56 110, 96 70, 136 86 C176 102, 216 56, 256 48 C296 40, 312 36, 330 28 L330 184 L16 184 Z"
+                  fill="url(#accentGrad)" opacity="0">
+                <animate attributeName="opacity" values="0;0.18" dur="1.2s" begin="1.3s" fill="freeze"/>
+            </path>
+
+            <!-- main animated line -->
+            <path d="M16 150 C56 110, 96 70, 136 86 C176 102, 216 56, 256 48 C296 40, 312 36, 330 28"
+                  fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-dasharray="400" stroke-dashoffset="400">
+                <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2.5s" begin="1.5s" fill="freeze"/>
+            </path>
+
+            <!-- glowing points (optimization phase) -->
+            <g fill="#fff" opacity="0">
+                <circle cx="16" cy="150" r="4"/>
+                <circle cx="56" cy="110" r="4"/>
+                <circle cx="96" cy="70" r="4"/>
+                <circle cx="136" cy="86" r="4"/>
+                <circle cx="176" cy="102" r="4"/>
+                <circle cx="216" cy="56" r="4"/>
+                <circle cx="256" cy="48" r="4"/>
+                <circle cx="296" cy="40" r="4"/>
+                <circle cx="330" cy="28" r="4"/>
+                <animate attributeName="opacity" values="0;1" dur="1s" begin="3.2s" fill="freeze"/>
+            </g>
+
+            <!-- comparison dashed line fades in last -->
+            <path d="M16 168 C56 130, 96 124, 136 110 C176 96, 216 120, 256 132 C296 144, 312 150, 330 156"
+                  fill="none" stroke="#8ab6ff" stroke-width="2" stroke-dasharray="6 6" opacity="0" stroke-linecap="round">
+                <animate attributeName="opacity" values="0;0.35" dur="1s" begin="3.4s" fill="freeze"/>
+            </path>
+        </g>
+    </g>
+</svg>

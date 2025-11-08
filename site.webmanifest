@@ -1,0 +1,23 @@
+{
+  "name": "task_01k9h9m7dse9gsw46vmc19z7bw_1762590928_img_0",
+  "short_name": "task_01k9h9m",
+  "description": "task_01k9h9m7dse9gsw46vmc19z7bw_1762590928_img_0 - A Progressive Web App",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
